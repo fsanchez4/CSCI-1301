@@ -3,7 +3,7 @@ import java.io.*;
 public class Notes {
 
 	public static void main(String[] args) {
-		
+	// Problem 2 print duplicates	
 		try {
 			Scanner console = new Scanner(new File("duplicates.txt"));
 			printDuplicates(console);
