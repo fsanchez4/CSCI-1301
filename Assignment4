@@ -1,0 +1,55 @@
+import java.util.*;
+import java.io.*;
+public class Notes {
+
+	public static void main(String[] args) {
+		
+		try {
+			Scanner console = new Scanner(new File("duplicates.txt"));
+			printDuplicates(console);
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+	
+	public static void printDuplicates(Scanner console) {
+			int sum = 1;
+			String calculate = "";
+	
+			while(console.hasNext()) {
+	
+			String previous = console.next();
+		
+			if (calculate.equalsIgnoreCase("")) {
+			  String current = console.next();
+				if (current.equals(previous)) {
+					sum++;
+					calculate = current + "*" + sum + " ";
+					if (sum > 1) {
+						System.out.print(calculate);
+						previous = current;
+						sum = 1;
+					}
+				}
+			}
+			if (console.hasNext()) {
+			  String current = console.next();
+				if (current.equals(previous)) {
+					sum++;
+					calculate = current + "*" + sum + " ";
+					if (sum > 1) {
+						System.out.print(calculate);
+						previous = current;
+						sum = 1;
+					}
+				}
+			}
+		  }
+  }
+}  
+/* Output:
+
+you*2 I*2 smirking*2 smirking*2 wow*2 yippee*2 yay*2 
+
+*/
