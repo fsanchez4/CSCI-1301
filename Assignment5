@@ -1,0 +1,25 @@
+public class Problem_1 {
+
+	public static void main(String[] args) {
+		percentEven();
+	}
+	
+	public static void percentEven() {
+		
+		int[] arr = {6,2,9,11,3};
+		double nums = 0;
+		double count = 0;
+		for (int index = 0; index<arr.length; index++) {
+			if (arr[index] % 2 == 0) {
+				count++;
+				nums = count*100/arr.length;			
+			}
+		}
+		System.out.print(nums);
+	}
+}
+
+// Output:  40.0
+
+// @menelio What does it mean when it says "then the call of percentEven(nums) should return 40.0"?
+            Should I have this set up differently? Can't quite seem to find 
