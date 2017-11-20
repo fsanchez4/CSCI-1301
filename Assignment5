@@ -1,21 +1,19 @@
 public class Problem_1 {
 
 	public static void main(String[] args) {
-		percentEven();
+		int[] nums = {6,2,9,11,3};
+		System.out.print(percentEven(nums));
 	}
 	
-	public static void percentEven() {
+	public static double percentEven(int[] nums) {
 		
-		int[] arr = {6,2,9,11,3};
-		double nums = 0;
 		double count = 0;
-		for (int index = 0; index<arr.length; index++) {
-			if (arr[index] % 2 == 0) {
-				count++;
-				nums = count*100/arr.length;			
+		for (int index = 0; index<nums.length; index++) {
+			if (nums[index] % 2 == 0) {
+				count++;		
 			}
 		}
-		System.out.print(nums);
+		return count*100/nums.length;	
 	}
 }
 
@@ -24,7 +22,6 @@ public class Problem_1 {
 // @menelio What does it mean when it says "then the call of percentEven(nums) should return 40.0"?
             Should I have this set up differently? Can't quite seem to find 
 
-import java.util.*;
 public class Problem_2 {
 
 	public static void main(String[] args) {
@@ -32,36 +29,18 @@ public class Problem_2 {
 		int[] a1 = {10,20,30,40,50,60};
 		int[] a2 = {10,20,30,40,50,60};
 		int[] a3 = {20,3,50,10,68};
-		System.out.println(equals(a1, a2));	// error on this line
-		System.out.println(equals(a2, a3));	// error on this line
+		System.out.println(equals(a1, a2));
+		System.out.println(equals(a1, a3));
 		
 	}
 
-	public static boolean equals(int[] a1, int[] a2, int[] a3) {
+	public static boolean equals(int[] arr1, int[] arr2) {
 		
-			if (a1.length != a2.length)
+			if (arr1.length != arr2.length)
 				return false;
 				
-				for (int index = 0; index < a1.length; index++) {
-					if (a1[index] != a2[index]) {
-						return false;
-					}
-				}
-			
-			if (a2.length != a3.length)
-				return false;
-			
-				for (int index = 0; index < a2.length; index++) {
-					if (a2[index] !=  a3[index]) {
-						return false;
-					}
-				}
-				
-			if (a1.length != a3.length)
-				return false;
-			
-				for (int index = 0; index < a1.length; index++) {
-					if (a1[index] != a3[index]) {
+				for (int index = 0; index < arr1.length; index++) {
+					if (arr1[index] != arr2[index]) {
 						return false;
 					}
 				}
@@ -71,3 +50,32 @@ public class Problem_2 {
 
 // Output:	true
 		false
+
+
+import java.util.*;
+
+public class Problem_3 {
+
+	public static void main(String[] args) {
+		
+		int[] arr1 = {1,2,3,4,5};
+		int[] arr2 = {6,7,8,9,10};
+		System.out.print(append(arr1,arr2));
+
+	}
+
+	public static String append(int[] a1, int[] a2) {
+		
+		int[] result = new int[a1.length + a2.length];
+		
+		for (int index = 0; index < a1.length; index++) {
+			result[index]=a1[index];
+		}
+		for (int index = 0; index < a2.length; index++) {
+			result[a1.length + index]=a2[index];
+		}
+		return Arrays.toString(result);
+	}
+}
+
+// Output:	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
