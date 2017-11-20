@@ -23,3 +23,51 @@ public class Problem_1 {
 
 // @menelio What does it mean when it says "then the call of percentEven(nums) should return 40.0"?
             Should I have this set up differently? Can't quite seem to find 
+
+import java.util.*;
+public class Problem_2 {
+
+	public static void main(String[] args) {
+		
+		int[] a1 = {10,20,30,40,50,60};
+		int[] a2 = {10,20,30,40,50,60};
+		int[] a3 = {20,3,50,10,68};
+		System.out.println(equals(a1, a2));	// error on this line
+		System.out.println(equals(a2, a3));	// error on this line
+		
+	}
+
+	public static boolean equals(int[] a1, int[] a2, int[] a3) {
+		
+			if (a1.length != a2.length)
+				return false;
+				
+				for (int index = 0; index < a1.length; index++) {
+					if (a1[index] != a2[index]) {
+						return false;
+					}
+				}
+			
+			if (a2.length != a3.length)
+				return false;
+			
+				for (int index = 0; index < a2.length; index++) {
+					if (a2[index] !=  a3[index]) {
+						return false;
+					}
+				}
+				
+			if (a1.length != a3.length)
+				return false;
+			
+				for (int index = 0; index < a1.length; index++) {
+					if (a1[index] != a3[index]) {
+						return false;
+					}
+				}
+			return true;
+	}
+}
+
+// Output:	true
+		false
