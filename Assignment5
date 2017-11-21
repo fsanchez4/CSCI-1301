@@ -79,3 +79,65 @@ public class Problem_3 {
 }
 
 // Output:	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+import java.util.Arrays;
+
+public class Problem_4 {
+
+	public static void main(String[] args) {
+		
+		int[] a1 = {11,42,-5,27,0,89};
+		int[] a2 = {10,20,30,40,50,60};
+		swapAll(a1,a2);
+		System.out.println(Arrays.toString(a1));
+		System.out.println(Arrays.toString(a2));
+	}
+
+	public static int[] swapAll(int[] arr1, int[] arr2) {
+		
+		for (int index=0; index<arr1.length; index++) {
+			int swapNums = arr1[index];
+			arr1[index] = arr2[index];
+			arr2[index] = swapNums;
+		}
+		return arr2;
+	}
+}
+
+// Output: 	[10, 20, 30, 40, 50, 60]
+		[11, 42, -5, 27, 0, 89]
+		
+		
+public class Problem_5 {
+
+	public static void main(String[] args) {
+
+		int[] a1 = {12,35,99,1,7,16,2,2,2,3,4,5};
+	//	int[] a2 = {0,1,2,3,4,4,22,2,16,82,1,3};
+		System.out.print(longestSortedSequence(a1));
+	}
+
+	public static int longestSortedSequence(int[] arr1) {
+		
+		if (arr1.length == 0) {
+			return 0;
+		}
+		
+		int count = 1;
+		int max = 1;
+		for (int index = 1; index < arr1.length; index++) {
+			if (arr1[index] >= arr1[index-1]) {
+				count++;	
+			} else {
+				count = 1;
+			} if (count>max) {
+				max = count;
+			}
+		}		
+		return max;
+		
+	}
+}
+
+// Output:	6
