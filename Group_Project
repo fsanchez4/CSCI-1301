@@ -1,0 +1,62 @@
+import java.util.*;
+import java.io.*;
+public class switchLoop {
+
+	public static void main(String[] args) throws IOException {
+		
+		String option = "";
+		Scanner chooseOption = new Scanner(System.in);
+		
+		System.out.println("Choose an option between 1-7 (press q to quit): ");
+		option = chooseOption.next();
+		
+		switch (option) {
+		
+		case "1":
+			while (option != "q") {
+			FileWriter writer = new FileWriter("switchloop.txt");	
+			System.out.println("Enter name: ");
+			String name = "";
+			writer.write(name = chooseOption.nextLine());
+			
+			System.out.println("Enter ticket type: ");
+			String ticketType = "";
+			writer.write(ticketType = chooseOption.nextLine() + " ");
+			
+			System.out.println("Enter fine: ");
+			String fine = "";
+			writer.write(fine = chooseOption.nextLine() + " ");
+			writer.close();
+			break;
+			}
+		case "2":
+			
+		
+		}
+		chooseOption.close();
+	/*	try {
+			FileWriter writer = new FileWriter("switchloop.txt");
+			System.out.println("Name (press q to quit): ");
+			writer.write(name=chooseOption.nextLine() + " ");
+				if (name.equals('q')) {
+					chooseOption.close();
+					System.out.println("Thank you for your submission.");
+				}
+			System.out.println("Ticket type (press q to quit): ");
+			writer.write(ticketType=chooseOption.nextLine() + " ");
+				if (ticketType.equals('q')) {
+					chooseOption.close();
+					System.out.println("Thank you for your submission.");
+				}
+			System.out.println("Fine (press q to quit): ");
+			writer.write(fine=chooseOption.next() + " ");
+				if (fine.equals('q')) {
+					chooseOption.close();
+					System.out.println("Thank you for your submission.");
+				}
+			writer.close();
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		} */
+	}
+}
